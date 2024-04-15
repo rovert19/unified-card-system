@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 from ..settings import timestamp_valid
-from datetime import datetime, timedelta
+from datetime import datetime
 from typing import Protocol, Optional
 from models import PaymentCard
 
