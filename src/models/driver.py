@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-
+import uuid
 
 # transport company tiene campos como company_ruc, company_name, company_propietario
 # automatizar la creacion de las tablas y database
@@ -7,9 +7,8 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class Driver:
-    id: int
+    id: uuid.UUID
     user: str
     password: str
     id_plate: str
-    document_id: str
-    company_ruc: int
+    bank_account: str

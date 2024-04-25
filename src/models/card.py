@@ -1,14 +1,13 @@
 from dataclasses import dataclass
 from typing import Optional
+import uuid
+from datetime import datetime, _Date
 
 
 @dataclass(frozen=False)
 class PaymentCard:
-    id: int
-    id_student: Optional[int] = None
+    id: uuid.UUID
+    id_student: Optional[str]
     bank_account: str
-    document_id: str
-    expiration_date: Optional[float] = None
-    last_update: int = 0
-    money: float = 0.0
-    active: bool = False 
+    expiration_date: Optional[_Date]
+    active: bool = False
