@@ -1,4 +1,4 @@
-from services.dispenser import DispenserPerson
+from services.dispenser_service import DispenserPerson
 
 import asyncio
 

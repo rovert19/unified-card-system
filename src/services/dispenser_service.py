@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 from typing import Protocol, Optional
 
 
-class Dispenser(Protocol):
+class IDispenser(Protocol):
     async def registry_card(self, id_student: Optional[int], document_id: str) -> None:
         ...
 
@@ -23,7 +23,7 @@ class Dispenser(Protocol):
 
 
 @dataclass
-class DispenserMachine:
+class DispenserMachine(IDispenser):
     payment_card: PaymentCard = field(init=False)
 
     async def registry_card(self, id_student: Optional[int], document_id: str):

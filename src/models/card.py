@@ -8,6 +8,7 @@ from datetime import datetime, _Date
 class PaymentCard:
     id: uuid.UUID
     id_student: Optional[str]
-    bank_account: str
+    document_id: str
     expiration_date: Optional[_Date]
     active: bool = False
+    balance: float = 0.0

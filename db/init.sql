@@ -3,17 +3,18 @@ CREATE TABLE IF NOT EXISTS bank (
     id           int PRIMARY KEY,
     document_id  char(8), -- foreign key -> nombre, apellido, domicilio
     account      char(20) NOT NULL UNIQUE, 
-    balance      money DEFAULT 0.00::money,
-    active       bool DEFAULT false,
+    t_balance    decimal(4,2) DEFAULT 0.00::money,
+    active       boolean DEFAULT false,
     last_update  timestamp
 );
 
 CREATE TABLE IF NOT EXISTS card (
     id           uuid PRIMARY KEY,
     id_student   text,
-    bank_account char(20), --foreign key -> nos dara balance, dni
+    document_id  char(8), --foreign key -> nos dara balance, dni
     expirate     date,
-    active       bool DEFAULT false,
+    active       boolean DEFAULT false,
+    balance      decimal(4,2) DEFAULT 0.00,
     FOREIGN KEY(bank_account)
     REFERENCES bank(account) ON DELETE CASCADE
 );

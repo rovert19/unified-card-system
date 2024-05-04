@@ -1,5 +1,5 @@
 from models.card import PaymentCard
-from models.drivers import Driver
+from models.driver import Driver
 
 from dataclasses import dataclass, field
 

@@ -2,7 +2,7 @@ version: '3.8'
 services:
   db:
     container_name: pg_container
-    image: postgres
+    image: postgres:13
     restart: always
     environments:
       POSTGRES_USER: ${POSTGRES_USER}
